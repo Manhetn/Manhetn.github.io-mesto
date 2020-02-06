@@ -1,4 +1,5 @@
-class PopupEdit extends Popup {
+import {Popup} from './Popup.js';
+export class PopupEdit extends Popup {
   constructor(container, validation, user) {
     super(container);
     this.validation = validation;
@@ -15,7 +16,7 @@ class PopupEdit extends Popup {
   }
   popupContent(){ 
     return  `<div class="popup__content popup__all-content">
-              <img src="./images/close.svg" alt="" class="popup__close popup-edit__close">
+              <Button class="popup__close popup-edit__close"></button>
               <h3 class="popup__title">Редактировать профиль</h3>
               <form class="popup__form" novalidate name="new">
                 <input type="text" required minlength="2" maxlength="30" name="name" class="popup__input popup__input_type_name" placeholder="Имя">

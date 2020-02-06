@@ -1,4 +1,5 @@
-class PopupAvatar extends Popup {
+import {Popup} from './Popup.js';
+export class PopupAvatar extends Popup {
   constructor(container, validation, user) {
     super(container);
     
@@ -14,7 +15,7 @@ class PopupAvatar extends Popup {
   }
   popupContent(){ 
     return  `<div class="popup__content popup__all-content">
-              <img src="./images/close.svg" alt="" class="popup__close popup-edit__close">
+              <button class="popup__close popup-edit__close"></button>
               <h3 class="popup__title">Обновить аватар</h3>
               <form class="popup__form" novalidate name="new">
                 <input type="url" required name="other" class="popup__input popup__input_type_link-url" placeholder="Ссылка на аватар">

@@ -1,3 +1,16 @@
+import './pages/style.css';
+import {Api} from './modules/Api.js';
+import {Card} from './modules/Card.js';
+import {CardList} from './modules/CardList.js';
+import {Owner } from './modules/Owner.js';
+import {PopupAddImage} from './modules/PopupAddImage.js';
+import {PopupAvatar} from './modules/PopupAvatar.js';
+import {PopupEdit} from './modules/PopupEdit.js';
+import {PopupImage} from './modules/PopupImage.js';
+import {Profile} from './modules/Profile.js';
+import {Validation} from './modules/Validation.js';
+import {Popup} from './modules/Popup.js';
+
 const errorMessages = {
   emptyInput: "Это обязательное поле",
   outOfRange: "Должно быть от 2 до 30 символов",

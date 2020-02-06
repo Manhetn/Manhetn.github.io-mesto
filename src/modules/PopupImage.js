@@ -1,4 +1,5 @@
-class PopupImage extends Popup {
+import {Popup} from './Popup.js';
+export class PopupImage extends Popup {
   constructor(container) {
     super(container);
     this.open = this.open.bind(this);
@@ -11,7 +12,7 @@ class PopupImage extends Popup {
   }
   popupContent(){
     return `<div class="popup__image-container popup__all-content">
-              <img src="./images/close.svg" alt="" class="popup__close popup__close_image-on-screen">
+              <button class="popup__close popup__close_image-on-screen"></button>
               <img src="" alt="" class="image-popup"/>
             </div>`;
   }

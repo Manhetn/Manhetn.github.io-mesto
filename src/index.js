@@ -22,9 +22,9 @@ const addImageButton = document.querySelector('.add-image__button');
 const placesList = document.querySelector(".places-list");
 const popupContainer = document.querySelector(".popup");
 const avatar = document.querySelector('.user-info__photo');
-
+const serverUrl =NODE_ENV === "development" ? "http://praktikum.tk/cohort6" : "https://praktikum.tk/cohort6";
 const api = new Api({
-  url: "http://95.216.175.5/cohort6",
+  url: "serverUrl",
   headers: {
     authorization: "4f8897cc-db33-44fa-9718-d936c615848c",
     "Content-Type": "application/json"

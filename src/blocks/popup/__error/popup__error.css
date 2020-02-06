@@ -1,0 +1,12 @@
+.popup__error{
+    margin-top: 4px;
+    margin-left: 6px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    display: none;
+}
+
+.popup__error-active{
+    display: block;
+} 

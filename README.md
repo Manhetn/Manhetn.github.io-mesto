@@ -38,13 +38,13 @@ _v1.0.0_
 
 
 ## Демо
-https://Manhetn.github.io/mesto
+https://manhetn.github.io/Manhetn.github.io-mesto/
 
 ## Установка проекта
 Скопируйте проект на компьютер:
 
 ```
-git clone https://github.com/Manhetn/Manhetn.github.io-mesto.git
+git https://github.com/Manhetn/Manhetn.github.io-mesto.git
 ```
 
 Установите зависимости проекта:

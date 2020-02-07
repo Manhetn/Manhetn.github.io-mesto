@@ -14,35 +14,33 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js'
     },
-    module: {// Правила обработки файлов при сборке
-        rules: [ // тут описываются правила
+    // Правила обработки файлов при сборке
+    module: {
+        rules: [// тут описываются правила
             {
-            test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-            use: { loader: 'babel-loader' }, // весь JS обрабатывается пакетом babel-loader
-            exclude: /node_modules/ // исключает папку node_modules
+                test: /\.js$/, // регулярное выражение, которое ищет все js файлы
+                use: { loader: 'babel-loader' }, // весь JS обрабатывается пакетом babel-loader
+                exclude: /node_modules/ // исключает папку node_modules
             },
             {
-            test: /\.css$/i, // применять это правило только к CSS-файлам
-            use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), // в правилах укажите, что если вы собираете в режиме dev, то плагин MiniCssExtractPlugin загружать не нужно.
+                test: /\.css$/i, // применять это правило только к CSS-файлам
+                use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), // в правилах укажите, что если вы собираете в режиме dev, то плагин MiniCssExtractPlugin загружать не нужно.
                 'css-loader', 
                 'postcss-loader'
                 ]
             },
             {
-            test: /\.(png|jpg|gif|ico|svg)$/,
-            use: [
-                   {
-                        loader: 'file-loader',
-                        options: {
-                            name: './images/[name].[ext]', // указали папку, куда складывать изображения
-                            esModule: false
-                        }
-                    },
+                test: /\.(png|jpg|gif|ico|svg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: './images/[name].[ext]', // указали папку, куда складывать изображения
+                        esModule: false
+                    }},
                     {
                         loader: 'image-webpack-loader',
                         options: {}
-                    },
-                ]
+                }]
             },
             // Настройка для подгрузки шрифтов
             {
@@ -61,7 +59,7 @@ module.exports = {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
             cssProcessorPluginOptions: {
-                    preset: ['default'],
+                preset: ['default'],
             },
             canPrint: true
         }), // подключите плагин после MiniCssExtractPlugin

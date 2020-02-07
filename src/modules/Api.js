@@ -1,4 +1,4 @@
-class Api {
+export class Api {
   constructor(options) {
     this.url = options.url;
     this.headers = options.headers;
@@ -19,15 +19,6 @@ class Api {
                  .then(this.checkRes)
                  .catch(this.showError);
   }
-  // sendAvatar(path, object) {
-  //   return fetch(`${this.url}/avatar/${path}`, {
-  //                 method: 'PATCH',
-  //                 headers: this.headers,
-  //                 body: JSON.stringify(object)
-  //              })
-  //                .then(this.checkRes)
-  //                .catch(this.showError);
-  // }
   sendData(path, object) {
     return fetch(`${this.url}${path}`, {
                   method: 'POST',

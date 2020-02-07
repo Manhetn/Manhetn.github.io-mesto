@@ -1,4 +1,4 @@
-class Validation{
+export class Validation{
     constructor(words) {
         this.errorMessages = words;
         this.checkForm = this.checkForm.bind(this);

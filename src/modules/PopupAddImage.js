@@ -1,4 +1,5 @@
-class PopupAddImage extends Popup {
+import {Popup} from './Popup.js';
+export class PopupAddImage extends Popup {
   constructor(container, validation, cardList) {
     super(container);
     this.container = container;
@@ -14,7 +15,8 @@ class PopupAddImage extends Popup {
   }
   popupContent(){
     return  `<div class="popup__content popup__all-content">
-              <img src="./images/close.svg" alt="" class="popup__close popup-image__close">
+              <button class="popup__close popup-image__close"></button>
+              <button class="place-card__delete-icon"></button>
               <h3 class="popup__title">Новое место</h3>
               <form class="popup__form" name="new">
                 <input type="text" required minlength="2" maxlength="30" name="name" class="popup__input popup__input_type_name" placeholder="Название">

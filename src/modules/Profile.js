@@ -1,4 +1,4 @@
-class Profile {
+export class Profile {
   constructor(userInfoProfil, api, owner) {
     this.name = userInfoProfil.querySelector(".user-info__name");
     this.other = userInfoProfil.querySelector(".user-info__job");

@@ -1,3 +1,16 @@
+import './pages/style.css';
+import {Api} from './modules/Api.js';
+import {Card} from './modules/Card.js';
+import {CardList} from './modules/CardList.js';
+import {Owner } from './modules/Owner.js';
+import {PopupAddImage} from './modules/PopupAddImage.js';
+import {PopupAvatar} from './modules/PopupAvatar.js';
+import {PopupEdit} from './modules/PopupEdit.js';
+import {PopupImage} from './modules/PopupImage.js';
+import {Profile} from './modules/Profile.js';
+import {Validation} from './modules/Validation.js';
+import {Popup} from './modules/Popup.js';
+
 const errorMessages = {
   emptyInput: "Это обязательное поле",
   outOfRange: "Должно быть от 2 до 30 символов",
@@ -9,9 +22,9 @@ const addImageButton = document.querySelector('.add-image__button');
 const placesList = document.querySelector(".places-list");
 const popupContainer = document.querySelector(".popup");
 const avatar = document.querySelector('.user-info__photo');
-
+const serverUrl =NODE_ENV === "development" ? "http://praktikum.tk/cohort6" : "https://praktikum.tk/cohort6";
 const api = new Api({
-  url: "http://95.216.175.5/cohort6",
+  url: "serverUrl",
   headers: {
     authorization: "4f8897cc-db33-44fa-9718-d936c615848c",
     "Content-Type": "application/json"

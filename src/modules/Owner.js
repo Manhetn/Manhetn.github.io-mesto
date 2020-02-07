@@ -1,4 +1,4 @@
-class Owner {
+export class Owner {
     constructor(id) {
       this._id = id;
     }

@@ -4,19 +4,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // научился р
 const WebpackMd5Hash = require('webpack-md5-hash'); // Отслеживает хеши и обновляет их
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
-
-// создаем переменную для development-сборки
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development';// создаем переменную для development-сборки
 
 module.exports = {
-    entry: { main: './src/index.js' },// Точка входа (откуда брать файл)
-    output: {// Точка выхода (куда будут записываться файлы)
+    // Точка входа (откуда брать файл) 
+    entry: { main: './src/index.js' },
+    // Точка выхода (куда будут записываться файлы)
+    output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js'
     },
     // Правила обработки файлов при сборке
     module: {
-        rules: [// тут описываются правила
+        // тут описываются правила
+        rules: [
             {
                 test: /\.js$/, // регулярное выражение, которое ищет все js файлы
                 use: { loader: 'babel-loader' }, // весь JS обрабатывается пакетом babel-loader
@@ -31,16 +32,19 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|ico|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: './images/[name].[ext]', // указали папку, куда складывать изображения
-                        esModule: false
-                    }},
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: './images/[name].[ext]', // указали папку, куда складывать изображения
+                            esModule: false
+                        }
+                    },
                     {
                         loader: 'image-webpack-loader',
                         options: {}
-                }]
+                    }
+                ]
             },
             // Настройка для подгрузки шрифтов
             {
@@ -52,8 +56,7 @@ module.exports = {
             }
         ]
     },
-
-    plugins: [ 
+    plugins: [
         new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,

@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Manhetn/Manhetn.github.io-mesto.git"
+    "url": "git+https://github.com/Manhetn/mesto.git"
   },
   "author": "Ilya Shestakov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Manhetn/Manhetn.github.io-mesto/issues"
+    "url": "https://github.com/Manhetn/mesto/issues"
   },
-  "homepage": "https://github.com/Manhetn/Manhetn.github.io-mesto#readme",
+  "homepage": "https://github.com/Manhetn/mesto#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
